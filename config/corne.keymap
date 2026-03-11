@@ -1,0 +1,249 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
+
+// Adapted from beekeeb Toucan config for Corne MX (42-key split)
+// Trackpad mouse clicks removed (Corne has no Cirque trackpad)
+
+#define LAYER_Base 0
+#define LAYER_Windows 1
+#define LAYER_Nav 2
+#define LAYER_Symb 3
+#define LAYER_Subl 4
+#define LAYER_Apps 5
+#define LAYER_Sesss 6
+#define LAYER_Systm 7
+#define LAYER_Yabai 8
+#define LAYER_Raycast 9
+#define LAYER_Letters 10
+#define LAYER_Obs 11
+#define LAYER_Bluetooth 12
+#define LAYER_Obspos 13
+#define LAYER_Work 14
+
+/ {
+    behaviors {
+        hrm_l: hrm_l {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            bindings = <&kp>, <&kp>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <0>;
+        };
+
+        hrm_r: hrm_r {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            bindings = <&kp>, <&kp>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <300>;
+            require-prior-idle-ms = <0>;
+        };
+
+        hrm_w: hrm_w {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <0>;
+            retro-tap;
+        };
+
+        my_mt: my_mt {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        my_lt: my_lt {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <300>;
+            bindings = <&mo>, <&kp>;
+        };
+
+        my_mtw: my_mtw {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp>, <&kp>;
+        };
+
+    };
+};
+
+/ {
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        layer_Base {
+            display-name = "BASE";
+            bindings = <
+  &my_mt RET TAB      &kp Q              &my_lt LAYER_Systm W   &my_mt LA(E) E   &my_mt LC(LG(F19)) R   &my_mt LG(LA(F1)) T                               &kp Y                &my_mt LG(Z) U        &kp I           &my_mt LG(LC(LA(LS(Z)))) O     &kp P               &kp BSLH
+  &lt LAYER_Nav ESC   &hrm_l LCTRL A     &hrm_l LSHFT S         &hrm_l LALT D    &hrm_l LGUI F          &my_mt LC(Z) G                                    &kp H                &hrm_r RGUI J         &hrm_r RALT K   &hrm_r RSHFT L                 &hrm_r RCTRL SEMI   &kp SQT
+  &kp LSHFT           &my_mt LG(TAB) Z   &my_mt LG(GRAVE) X     &my_mt LG(C) C   &my_mt LG(V) V         &my_mt LG(LA(F8)) B                               &my_mt LA(N) N       &my_mt LG(LA(F9)) M   &kp COMMA       &my_mt LG(LC(LA(LS(N6)))) DOT  &kp FSLH            &kp RSHFT
+                                                                                 &none                  &lt LAYER_Symb BSPC   &kp SPACE       &kp SPACE   &lt LAYER_Subl RET   &none
+            >;
+        };
+
+        layer_Windows {
+            display-name = "WNDS";
+            bindings = <
+  &my_mtw RET TAB     &kp Q                      &lt LAYER_Systm W          &kp E             &my_mtw LC(LG(F19)) R   &my_mtw LG(LA(F1)) T                               &kp Y                &my_mt LC(Z) U   &kp I           &kp O            &kp P               &kp BSLH
+  &lt LAYER_Nav ESC   &hrm_w LCTRL A             &hrm_w LSHFT S             &hrm_w LGUI D     &hrm_w LALT F           &kp G                                              &kp H                &hrm_w RALT J    &hrm_w RGUI K   &hrm_w RSHFT L   &hrm_w RCTRL SEMI   &kp SQT
+  &kp LSHFT           &my_mtw LS(LA(LG(F6))) Z   &my_mtw LS(LA(LG(F7))) X   &my_mtw LC(C) C   &my_mtw LC(V) V         &kp B                                              &kp N                &kp M            &kp COMMA       &kp DOT          &kp FSLH            &kp RSHFT
+                                                                                              &none                   &lt LAYER_Symb BSPC    &kp SPACE       &kp SPACE   &lt LAYER_Subl RET   &none
+            >;
+        };
+
+
+        layer_Nav {
+                  display-name = "NAVI";
+            bindings = <
+  &kp LG(LC(LA(LS(TAB))))   &kp LG(LC(LA(LS(N0))))      &kp LG(LC(LA(LS(W))))    &kp LG(LC(LA(LS(D))))   &trans         &kp LG(LC(LA(LS(T))))                            &kp LA(LS(LEFT))   &kp LA(LS(DOWN))   &kp LA(LS(UP))   &kp LA(LS(RIGHT))   &trans                     &trans
+  &trans                    &kp LG(LC(LA(LS(EQUAL))))   &kp LG(LC(LA(LS(N9))))   &kp LG(LBKT)            &kp LG(RBKT)   &kp LG(LC(LA(LS(G))))                            &kp LEFT           &kp DOWN           &kp UP           &kp RIGHT           &kp LG(LC(LA(LS(SEMI))))   &trans
+  &trans                    &trans                      &trans                   &trans                  &trans         &kp LG(LC(LA(LS(B))))                            &trans             &trans             &trans           &trans              &trans                     &trans
+                                                                                                         &trans         &none                   &none           &trans   &trans             &trans
+            >;
+        };
+
+        layer_Symb {
+            display-name = "SYMB";
+            bindings = <
+  &kp LS(MINUS)   &kp LS(N1)      &kp LS(N2)    &kp LS(N3)     &kp LS(N4)   &kp LS(N5)                         &kp LS(N6)     &kp LS(N7)     &kp LS(N8)   &kp LS(N9)   &kp LS(N0)   &kp MINUS
+  &kp LS(GRAVE)   &kp N1          &kp N2        &kp N3         &kp N4       &kp N5                             &kp N6         &kp N7         &kp N8       &kp N9       &kp N0       &kp GRAVE
+  &kp LS(EQUAL)   &kp LS(COMMA)   &kp LS(DOT)   &kp LS(FSLH)   &kp LBKT     &kp RBKT                           &kp LS(LBKT)   &kp LS(RBKT)   &kp COMMA    &kp DOT      &kp FSLH     &kp EQUAL
+                                                               &trans       &trans       &trans       &trans   &trans         &trans
+            >;
+        };
+
+
+        layer_Subl {
+            display-name = "SUBL";
+            bindings = <
+  &trans   &trans   &mo LAYER_Work      &trans   &mo LAYER_Raycast   &mo LAYER_Sesss                             &trans   &trans   &trans   &mo LAYER_Obs   &trans   &trans
+  &trans   &trans   &mo LAYER_Letters   &trans   &trans              &trans                                      &trans   &trans   &trans   &trans          &trans   &trans
+  &trans   &trans   &trans              &trans   &trans              &mo LAYER_Bluetooth                         &trans   &trans   &trans   &trans          &trans   &trans
+                                                 &trans              &mo LAYER_Apps        &trans       &trans   &trans   &trans
+            >;
+        };
+
+          layer_Apps {
+            display-name = "APPS";
+            bindings = <
+  &trans   &kp LS(LC(F1))    &kp LS(LC(F2))    &kp LS(LC(F3))    &kp LS(LC(F4))    &kp LS(LC(F5))                          &kp LS(LC(F6))    &kp LS(LC(F7))    &kp LS(LC(F8))    &kp LS(LC(F9))    &kp LS(LC(F10))   &kp LS(LC(F11))
+  &trans   &kp LS(LC(F12))   &kp LS(LC(F13))   &kp LC(LA(F16))   &kp LC(LA(F17))   &kp LS(LC(F16))                         &kp LS(LC(F17))   &kp LS(LC(F18))   &kp LS(LC(F19))   &kp LC(LA(F18))   &kp LC(LA(F12))   &kp LC(LA(F13))
+  &trans   &kp LC(LA(F1))    &kp LC(LA(F2))    &kp LC(LA(F3))    &kp LC(LA(F4))    &kp LC(LA(F5))                          &kp LC(LA(F6))    &kp LC(LA(F7))    &kp LC(LA(F8))    &kp LC(LA(F9))    &kp LC(LA(F10))   &kp LC(LA(F11))
+                                                                 &trans            &trans            &trans       &trans   &trans            &trans
+            >;
+        };
+
+          layer_Sess {
+            display-name = "SESS";
+            bindings = <
+  &trans   &trans   &kp LS(LA(LG(F10)))   &kp LC(LG(F12))   &kp LC(LG(F13))   &trans                         &kp LC(LG(F16))   &kp LC(LG(F17))   &kp LC(LG(F18))   &kp LC(LA(F19))   &kp LC(LG(F1))    &trans
+  &trans   &trans   &trans                &trans            &trans            &trans                         &kp LC(LG(F2))    &kp LC(LG(F3))    &kp LC(LG(F4))    &kp LC(LG(F5))    &kp LC(LG(F6))    &trans
+  &trans   &trans   &trans                &trans            &trans            &trans                         &kp LC(LG(F7))    &kp LC(LG(F8))    &kp LC(LG(F9))    &kp LC(LG(F10))   &kp LC(LG(F11))   &trans
+                                                            &trans            &trans   &trans       &trans   &trans            &trans
+            >;
+        };
+
+
+              layer_Systm {
+            display-name = "SYST";
+            bindings = <
+  &trans      &kp LG(LA(F2))   &trans   &kp K_VOL_UP   &lt LAYER_Yabai LG(EQUAL)   &kp LG(LA(F3))                         &kp C_PREV         &kp C_BRI_DN     &kp C_BRI_UP   &kp C_NEXT         &kp C_PP   &trans
+  &kp LG(W)   &kp LG(LC(Q))    &trans   &kp K_VOL_DN   &kp LG(MINUS)               &kp LG(LA(F4))                         &kp LG(LS(LBKT))   &kp LG(LA(F6))   &trans         &kp LG(LS(RBKT))   &trans     &trans
+  &trans      &trans           &trans   &trans         &trans                      &trans                                 &kp LG(LA(F5))     &kp LG(LA(F7))   &trans         &trans             &trans     &trans
+                                                       &trans                      &trans           &trans       &trans   &trans             &trans
+            >;
+        };
+
+              layer_Yabai {
+            display-name = "YABA";
+            bindings = <
+  &trans   &trans   &trans   &trans   &kp LS(LA(LC(F10)))   &trans                         &kp LS(LA(LC(F11)))   &kp LS(LA(LC(F12)))   &kp LS(LA(LC(F13)))   &kp LS(LA(LC(F16)))   &trans   &trans
+  &trans   &trans   &trans   &trans   &trans                &trans                         &kp LS(LA(LC(F17)))   &kp LS(LA(LC(F18)))   &kp LS(LA(LC(F19)))   &kp LS(LA(LG(F1)))    &trans   &trans
+  &trans   &trans   &trans   &trans   &trans                &trans                         &kp LS(LA(LG(F2)))    &kp LS(LA(LG(F3)))    &kp LS(LA(LG(F4)))    &kp LS(LA(LG(F5)))    &trans   &trans
+                                      &trans                &trans   &trans       &trans   &trans                &trans
+            >;
+        };
+
+       
+              layer_Raycast {
+            display-name = "RAYC";
+            bindings = <
+  &trans   &trans   &trans   &kp LG(LA(F10))   &trans   &trans                         &kp LG(LA(F18))   &kp LG(LA(F19))   &kp LS(LG(F1))    &kp LS(LG(F2))    &kp LS(LG(F3))    &trans
+  &trans   &trans   &trans   &trans            &trans   &trans                         &kp LG(LA(F11))   &kp LG(LA(F12))   &kp LG(LA(F13))   &kp LG(LA(F16))   &kp LG(LA(F17))   &trans
+  &trans   &trans   &trans   &trans            &trans   &trans                         &trans            &trans            &trans            &trans            &trans            &trans
+                                               &trans   &trans   &trans       &trans   &trans            &trans
+            >;
+        };
+
+
+              layer_Letters {
+            display-name = "LTRS";
+            bindings = <
+  &trans   &trans   &trans   &trans           &trans   &trans                         &kp LS(LG(F5))    &kp LS(LG(F6))    &kp LS(LG(F7))    &trans   &trans   &trans
+  &trans   &trans   &trans   &kp LS(LG(F4))   &trans   &trans                         &kp LS(LG(F8))    &kp LS(LG(F9))    &kp LS(LG(F10))   &trans   &trans   &trans
+  &trans   &trans   &trans   &trans           &trans   &trans                         &kp LS(LG(F11))   &kp LS(LG(F12))   &kp LS(LG(F13))   &trans   &trans   &trans
+                                              &trans   &trans   &trans       &trans   &trans            &trans
+            >;
+        };
+
+        layer_Obs {
+            display-name = "OBS";
+            bindings = <
+  &trans   &kp LS(LA(F1))    &kp LS(LA(F2))       &kp LS(LA(F3))       &kp LS(LA(F4))       &kp LS(LA(F5))                             &kp LS(LA(F6))       &kp LS(LA(F7))       &kp LS(LA(F8))       &trans               &mo LAYER_Obspos     &trans
+  &trans   &kp LS(LA(F11))   &kp LS(LA(F12))      &kp LS(LA(F13))      &kp LS(LA(F16))      &kp LS(LA(F17))                            &kp LS(LA(F18))      &kp LS(LA(F19))      &kp LS(LG(F16))      &kp LS(LG(F17))      &kp LS(LG(F18))      &trans
+  &trans   &kp LS(LG(F19))   &kp LS(LA(LC(F1)))   &kp LS(LA(LC(F2)))   &kp LS(LA(LC(F3)))   &kp LS(LA(LC(F4)))                         &kp LS(LA(LC(F5)))   &kp LS(LA(LC(F6)))   &kp LS(LA(LC(F7)))   &kp LS(LA(LC(F8)))   &kp LS(LA(LC(F9)))   &trans
+                                                                       &trans               &trans               &trans       &trans   &trans               &trans
+            >;
+        };
+
+
+          layer_Bluetooth {
+            display-name = "BLUE";
+            bindings = <
+  &trans   &trans   &trans   &trans   &trans   &trans                         &trans       &to 0          &to 1          &trans         &trans         &trans
+  &trans   &trans   &trans   &trans   &trans   &trans                         &bt BT_CLR   &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4
+  &trans   &trans   &trans   &trans   &trans   &trans                         &trans       &trans         &trans         &trans         &trans         &trans
+                                      &trans   &trans   &trans       &trans   &trans       &trans
+            >;
+        };
+
+      
+        layer_Obspos {
+            display-name = "OBP";
+            bindings = <
+  &trans   &trans           &trans            &trans               &trans               &trans                         &trans   &trans   &trans   &trans   &trans   &trans
+  &trans   &kp LS(LA(F9))   &kp LS(LA(F10))   &kp LS(LA(LG(F8)))   &kp LS(LA(LG(F9)))   &trans                         &trans   &trans   &trans   &trans   &trans   &trans
+  &trans   &trans           &trans            &trans               &trans               &trans                         &trans   &trans   &trans   &trans   &trans   &trans
+                                                                   &trans               &trans   &trans       &trans   &trans   &trans
+            >;
+        };
+
+
+        layer_Work {
+            display-name = "WRK";
+            bindings = <
+  &trans   &trans   &trans   &trans   &trans                &trans                         &trans   &trans                &trans                &kp LS(LA(LG(F12)))   &trans                &trans
+  &trans   &trans   &trans   &trans   &kp LS(LA(LG(F18)))   &trans                         &trans   &kp LS(LA(LG(F16)))   &kp LS(LA(LG(F11)))   &trans                &kp LS(LA(LG(F17)))   &trans
+  &trans   &trans   &trans   &trans   &trans                &trans                         &trans   &kp LS(LA(LG(F13)))   &trans                &trans                &trans                &trans
+                                      &trans                &trans   &trans       &trans   &trans   &trans
+            >;
+        };
+
+    };
+};
