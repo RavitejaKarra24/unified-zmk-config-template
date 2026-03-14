@@ -10,7 +10,7 @@
 BASE ──hold Esc────→ NAV   (arrows, screenshots, clipboard)
      ──hold Bksp───→ SYMB  (numbers, symbols, brackets)
      ──hold Enter──→ MEDIA (Aerospace, tabs, volume, brightness, mic, DND)
-                       └──hold B──→ ADJUST (Bluetooth profiles)
+                       └──hold outer-left──→ ADJUST (Bluetooth profiles)
 ```
 
 **Combos (simultaneous press):**
@@ -59,7 +59,7 @@ QWERTY with homerow mods. Optimized for macOS.
 ├──────────┼────────┼────────┼────────┼────────┼────────┤          ├────────┼────────┼────────┼────────┼────────┼────────┤
 │  LShift  │ Z/⌘Tab │ X/⌘X   │ C/⌘C   │ V/⌘V   │   B    │          │   N    │   M    │   ,    │   .    │   /    │ RShift │
 └──────────┴────────┴────────┴────────┼────────┼────────┼────┐┌────┼────────┼────────┼────────┴────────┴────────┴────────┘
-                                       │ (none) │Bk/SYMB │ Spc││Spc │Ent/MED │ (none) │
+                                       │  Del   │Bk/SYMB │ Spc││Spc │Ent/MED │  Del   │
                                        └────────┴────────┴────┘└────┴────────┴────────┘
 ```
 
@@ -78,8 +78,10 @@ QWERTY with homerow mods. Optimized for macOS.
 
 **Thumb keys:**
 
-- Left: Backspace (tap) / SYMB layer (hold)
-- Right: Enter (tap) / MEDIA layer (hold)
+- Left outer: Del (forward delete)
+- Left middle: Backspace (tap) / SYMB layer (hold)
+- Right middle: Enter (tap) / MEDIA layer (hold)
+- Right outer: Del (forward delete)
 
 ---
 
@@ -156,11 +158,11 @@ Left side = workspace and tab management. Right side = media and system controls
 
 ```
 ┌────────┬────────┬────────┬────────┬────────┬────────┐          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-│  ⌥1    │  ⌥2    │  ⌥3    │  ⌥4    │  ⌥5    │  ⌥6    │          │        │ Bri Dn │ Bri Up │        │        │        │
+│        │  ⌥1    │  ⌥2    │  ⌥3    │  ⌥4    │  ⌥5    │          │        │ Bri Dn │ Bri Up │        │        │        │
 ├────────┼────────┼────────┼────────┼────────┼────────┤          ├────────┼────────┼────────┼────────┼────────┼────────┤
-│  ⌘1    │  ⌘2    │  ⌘3    │  ⌘4    │  ⌘5    │  ⌘6    │          │  Prev  │ Vol Dn │ Vol Up │  Next  │ Play/P │  Mute  │
+│        │  ⌘1    │  ⌘2    │  ⌘3    │  ⌘4    │  ⌘5    │          │  Prev  │ Vol Dn │ Vol Up │  Next  │ Play/P │  Mute  │
 ├────────┼────────┼────────┼────────┼────────┼────────┤          ├────────┼────────┼────────┼────────┼────────┼────────┤
-│  ⌃⇧1   │  ⌃⇧2   │  ⌃⇧3   │  ⌃⇧4   │  ⌃⇧5   │→ ADJ   │          │  Mic*  │  DND*  │  Lock  │  ⌘⇧[   │  ⌘⇧]   │        │
+│→ ADJ   │  ⌃⇧1   │  ⌃⇧2   │  ⌃⇧3   │  ⌃⇧4   │  ⌃⇧5   │          │  Mic*  │  DND*  │  Lock  │  ⌘⇧[   │  ⌘⇧]   │        │
 └────────┴────────┴────────┴────────┼────────┼────────┼────┐┌────┼────────┼────────┼────────┴────────┴────────┴────────┘
                                      │ (trns) │ (trns) │trns││trns│ (held) │ (trns) │
                                      └────────┴────────┴────┘└────┴────────┴────────┘
@@ -170,10 +172,10 @@ Left side = workspace and tab management. Right side = media and system controls
 
 | Row | Keys | Action |
 |-----|------|--------|
-| Top | ⌥1 – ⌥6 | Aerospace: switch to workspace 1–6 |
-| Home | ⌘1 – ⌘6 | Jump to browser/terminal tab 1–6 |
+| Top | ⌥1 – ⌥5 | Aerospace: switch to workspace 1–5 |
+| Home | ⌘1 – ⌘5 | Jump to browser/terminal tab 1–5 |
 | Bottom | ⌃⇧1 – ⌃⇧5 | Aerospace: assign app to workspace 1–5 |
-| Bottom-right | → ADJ | Hold to access Bluetooth (ADJUST layer) |
+| Bottom-left | → ADJ | Hold outer pinky to access Bluetooth (ADJUST layer) |
 
 **Right hand — system controls:**
 
@@ -191,9 +193,9 @@ Left side = workspace and tab management. Right side = media and system controls
 
 ---
 
-## Layer 4: ADJ (hold B on MEDIA)
+## Layer 4: ADJ (hold outer left on MEDIA)
 
-Bluetooth profile management. Accessed via: hold Enter + hold B.
+Bluetooth profile management. Accessed via: hold Enter + hold outer-left pinky key.
 
 ```
 ┌────────┬────────┬────────┬────────┬────────┬────────┐          ┌────────┬────────┬────────┬────────┬────────┬────────┐
@@ -240,7 +242,6 @@ alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
 alt-5 = 'workspace 5'
-alt-6 = 'workspace 6'
 
 # Assign app to workspace
 ctrl-shift-1 = 'move-node-to-workspace 1'
@@ -268,7 +269,7 @@ ctrl-shift-5 = 'move-node-to-workspace 5'
 
 2. **Edit the keymap**: Modify `config/corne.keymap`, push to GitHub, download firmware from Actions, flash.
 
-3. **Add more Aerospace workspaces**: The MEDIA layer supports 6 switch slots (⌥1–⌥6) and 5 assign slots (⌃⇧1–⌃⇧5). To add more, replace `&none` keys on the MEDIA layer right side.
+3. **Add more Aerospace workspaces**: The MEDIA layer supports 5 switch/assign slots. To add a 6th, replace the outer-column `&none` keys on the MEDIA layer top/home rows.
 
 ---
 

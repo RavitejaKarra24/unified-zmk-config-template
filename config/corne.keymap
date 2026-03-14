@@ -68,7 +68,7 @@
   &kp TAB              &kp Q              &kp W              &kp E            &kp R            &kp T                                    &kp Y        &kp U            &kp I           &kp O            &kp P               &kp BSLH
   &lt LAYER_Nav ESC    &hrm_l LCTRL A     &hrm_l LSHFT S     &hrm_l LALT D    &hrm_l LGUI F    &kp G                                    &kp H        &hrm_r RGUI J    &hrm_r RALT K   &hrm_r RSHFT L   &hrm_r RCTRL SEMI   &kp SQT
   &kp LSHFT            &my_mt LG(TAB) Z   &my_mt LG(X) X     &my_mt LG(C) C   &my_mt LG(V) V   &kp B                                    &kp N        &kp M            &kp COMMA       &kp DOT          &kp FSLH            &kp RSHFT
-                                                                               &none            &lt LAYER_Symb BSPC   &kp SPACE  &kp SPACE  &lt LAYER_Media RET   &none
+                                                                               &kp DEL          &lt LAYER_Symb BSPC   &kp SPACE  &kp SPACE  &lt LAYER_Media RET   &kp DEL
             >;
         };
 
@@ -95,9 +95,9 @@
         layer_Media {
             display-name = "MEDIA";
             bindings = <
-  &kp LA(N1)       &kp LA(N2)       &kp LA(N3)       &kp LA(N4)       &kp LA(N5)       &kp LA(N6)                             &none        &kp C_BRI_DN     &kp C_BRI_UP   &none                &none                &none
-  &kp LG(N1)       &kp LG(N2)       &kp LG(N3)       &kp LG(N4)       &kp LG(N5)       &kp LG(N6)                             &kp C_PREV   &kp K_VOL_DN     &kp K_VOL_UP   &kp C_NEXT           &kp C_PP             &kp C_MUTE
-  &kp LC(LS(N1))   &kp LC(LS(N2))   &kp LC(LS(N3))   &kp LC(LS(N4))   &kp LC(LS(N5))   &mo LAYER_Adjust                       &kp F13      &kp F14          &kp LG(LC(Q))  &kp LG(LS(LBKT))     &kp LG(LS(RBKT))     &none
+  &none              &kp LA(N1)       &kp LA(N2)       &kp LA(N3)       &kp LA(N4)       &kp LA(N5)                             &none        &kp C_BRI_DN     &kp C_BRI_UP   &none                &none                &none
+  &none              &kp LG(N1)       &kp LG(N2)       &kp LG(N3)       &kp LG(N4)       &kp LG(N5)                             &kp C_PREV   &kp K_VOL_DN     &kp K_VOL_UP   &kp C_NEXT           &kp C_PP             &kp C_MUTE
+  &mo LAYER_Adjust   &kp LC(LS(N1))   &kp LC(LS(N2))   &kp LC(LS(N3))   &kp LC(LS(N4))   &kp LC(LS(N5))                         &kp F13      &kp F14          &kp LG(LC(Q))  &kp LG(LS(LBKT))     &kp LG(LS(RBKT))     &none
                                                                         &trans           &trans             &trans     &trans   &trans       &trans
             >;
         };
