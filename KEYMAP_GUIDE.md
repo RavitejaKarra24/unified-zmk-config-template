@@ -195,22 +195,34 @@ Left side = workspace and tab management. Right side = media and system controls
 
 ## Layer 4: ADJ (hold outer left on MEDIA)
 
-Bluetooth profile management. Accessed via: hold Enter + hold outer-left pinky key.
+Bluetooth + RGB backlight. Accessed via: hold Enter + hold outer-left pinky key.
 
 ```
 ┌────────┬────────┬────────┬────────┬────────┬────────┐          ┌────────┬────────┬────────┬────────┬────────┬────────┐
-│        │        │        │        │        │        │          │        │        │        │        │        │        │
+│        │        │        │        │        │        │          │RGB Tog │RGB Br- │RGB Br+ │RGB Eff │        │        │
 ├────────┼────────┼────────┼────────┼────────┼────────┤          ├────────┼────────┼────────┼────────┼────────┼────────┤
 │        │        │        │        │        │        │          │ BT CLR │  BT 0  │  BT 1  │  BT 2  │  BT 3  │  BT 4  │
 ├────────┼────────┼────────┼────────┼────────┼────────┤          ├────────┼────────┼────────┼────────┼────────┼────────┤
-│        │        │        │        │        │        │          │        │        │        │        │        │        │
+│        │        │        │        │        │        │          │        │ Hue -  │ Hue +  │ Sat -  │ Sat +  │        │
 └────────┴────────┴────────┴────────┼────────┼────────┼────┐┌────┼────────┼────────┼────────┴────────┴────────┴────────┘
                                      │        │        │    ││    │        │        │
                                      └────────┴────────┴────┘└────┴────────┴────────┘
 ```
 
+**Bluetooth:**
+
 - **BT 0–4**: Select Bluetooth profile (pair up to 5 devices)
 - **BT CLR**: Clear current Bluetooth pairing
+
+**RGB backlight:**
+
+| Key | Action |
+|-----|--------|
+| RGB Tog | Toggle on/off |
+| RGB Br+/Br- | Brightness up/down |
+| RGB Eff | Cycle through effects (solid, breathe, spectrum, etc.) |
+| Hue +/- | Change color hue |
+| Sat +/- | Change color saturation |
 
 ---
 
