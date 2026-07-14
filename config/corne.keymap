@@ -10,6 +10,12 @@
 #define LAYER_Media  3
 #define LAYER_Adjust 4
 
+/* Corne stock shield defaults to 10 LEDs/side; full per-key + underglow is 27/side
+ * (21 under keys + 6 underglow). Without this, only the first 10 LEDs light. */
+&led_strip {
+    chain-length = <27>;
+};
+
 / {
     behaviors {
         hrm_l: hrm_l {
