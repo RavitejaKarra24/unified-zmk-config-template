@@ -162,7 +162,7 @@ Left side = workspace and tab management. Right side = media and system controls
 ├────────┼────────┼────────┼────────┼────────┼────────┤          ├────────┼────────┼────────┼────────┼────────┼────────┤
 │        │  ⌘1    │  ⌘2    │  ⌘3    │  ⌘4    │  ⌘5    │          │  Prev  │ Vol Dn │ Vol Up │  Next  │ Play/P │  Mute  │
 ├────────┼────────┼────────┼────────┼────────┼────────┤          ├────────┼────────┼────────┼────────┼────────┼────────┤
-│→ ADJ   │  ⌃⇧1   │  ⌃⇧2   │  ⌃⇧3   │  ⌃⇧4   │  ⌃⇧5   │          │  Mic*  │  DND*  │  Lock  │  ⌘⇧[   │  ⌘⇧]   │        │
+│→ ADJ   │  ⌥⇧1   │  ⌥⇧2   │  ⌥⇧3   │  ⌥⇧4   │  ⌥⇧5   │          │  Mic*  │  DND*  │  Lock  │  ⌘⇧[   │  ⌘⇧]   │        │
 └────────┴────────┴────────┴────────┼────────┼────────┼────┐┌────┼────────┼────────┼────────┴────────┴────────┴────────┘
                                      │ (trns) │ (trns) │trns││trns│ (held) │ (trns) │
                                      └────────┴────────┴────┘└────┴────────┴────────┘
@@ -174,7 +174,7 @@ Left side = workspace and tab management. Right side = media and system controls
 |-----|------|--------|
 | Top | ⌥1 – ⌥5 | Aerospace: switch to workspace 1–5 |
 | Home | ⌘1 – ⌘5 | Jump to browser/terminal tab 1–5 |
-| Bottom | ⌃⇧1 – ⌃⇧5 | Aerospace: assign app to workspace 1–5 |
+| Bottom | ⌥⇧1 – ⌥⇧5 | Aerospace: assign app to workspace 1–5 |
 | Bottom-left | → ADJ | Hold outer pinky to access Bluetooth (ADJUST layer) |
 
 **Right hand — system controls:**
@@ -256,11 +256,11 @@ alt-4 = 'workspace 4'
 alt-5 = 'workspace 5'
 
 # Assign app to workspace
-ctrl-shift-1 = 'move-node-to-workspace 1'
-ctrl-shift-2 = 'move-node-to-workspace 2'
-ctrl-shift-3 = 'move-node-to-workspace 3'
-ctrl-shift-4 = 'move-node-to-workspace 4'
-ctrl-shift-5 = 'move-node-to-workspace 5'
+alt-shift-1 = 'move-node-to-workspace 1'
+alt-shift-2 = 'move-node-to-workspace 2'
+alt-shift-3 = 'move-node-to-workspace 3'
+alt-shift-4 = 'move-node-to-workspace 4'
+alt-shift-5 = 'move-node-to-workspace 5'
 ```
 
 ---
